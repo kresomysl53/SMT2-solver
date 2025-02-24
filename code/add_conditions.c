@@ -84,7 +84,7 @@ void all_regions_max_one_side_product(CNF* formula, unsigned num_of_regions, uns
     assert(formula != NULL);
     assert(num_of_regions > 0);
 
-    for (unsigned k = 0; k < num_of_regions; ++k) {                         ////    ∧       ¬        ∨
+    for (unsigned k = 0; k < num_of_regions; ++k) {
         for (unsigned p_1 = 0; p_1 < num_of_products; ++p_1) {
             for (unsigned p_2 = 0; p_2 < num_of_products; ++p_2) {
                 if (p_1 >= p_2) { continue; }
@@ -113,8 +113,6 @@ void main_side_products_different(CNF* formula, unsigned num_of_regions, unsigne
             add_literal_to_clause(cl, false, MAIN_PRODUCT, k, p);       //  kde k = index kraje; p = index produktu
         }
     }
-    
-    // Zde doplňte řešení
 }
 
 /** Funkce vytvářející klauzule ošetřující podmínku, že 
@@ -141,14 +139,6 @@ void neighbour_regions_different_main_products(CNF* formula, unsigned num_of_reg
             }
         }
     }
-    
-    // Zde doplňte řešení
-    // Tip: Využijte implementovanou funkci are_neighbours.
-    // Příklad použití:
-    // unsigned region1 = 0;
-    // unsigned region2 = 1;
-    // if (are_neighbours(neighbours, region1, region2)) { ... }
-
 }
 
 /** Funkce vytvářející klauzule ošetřující podmínku, že 
