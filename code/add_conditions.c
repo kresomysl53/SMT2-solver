@@ -188,7 +188,7 @@ void main_region_main_product_as_side_product_elsewhere(CNF* formula, unsigned n
 
     for (unsigned p = 0; p < num_of_products; ++p) {
         Clause* cl = create_new_clause(formula);
-        for (unsigned k = 1; k < num_of_regions; ++k) {
+        for (unsigned k = 1; k < num_of_regions; ++k) {			// toto je tu nove!
                 add_literal_to_clause(cl, false, MAIN_PRODUCT, 0, p);   //  ¬h{0,p} ∨ v{k,p} ∨ v{k,p} ∨ ...
                 add_literal_to_clause(cl, true, SIDE_PRODUCT, k, p);    //  kde k zastupuje vsechny ostatni kraje (pokud num_of_regions > 1)
             }
